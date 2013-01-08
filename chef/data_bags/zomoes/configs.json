@@ -1,8 +1,6 @@
 {
     "id"   : "configs",
     "gems" : [
-        "rdoc",
-        "sinatra",
-        "mongo_mapper"
+        "bundler"
     ]
 }

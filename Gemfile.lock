@@ -12,6 +12,7 @@ GEM
       bson (~> 1.8.1)
     builder (3.0.4)
     i18n (0.6.1)
+    json (1.6.1)
     mongo (1.8.1)
       bson (~> 1.8.1)
     mongo_mapper (0.12.0)
@@ -35,5 +36,6 @@ PLATFORMS
 
 DEPENDENCIES
   bson_ext
+  json
   mongo_mapper
   sinatra

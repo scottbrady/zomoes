@@ -1,9 +1,7 @@
-require "models/resume"
-require "pp"
-require "json"
+require "peers/resume"
 
 get "/api/resume/:resumeId" do |resumeId|
     content_type :json
-    resume = Resume.find(resumeId)
+    resume = ResumePeer.instance.getResumeById(resumeId)
     resume.to_json
 end

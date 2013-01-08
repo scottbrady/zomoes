@@ -1,0 +1,7 @@
+{
+    "id"   : "configs",
+    "gems" : [
+        "rdoc",
+        "sinatra"
+    ]
+}

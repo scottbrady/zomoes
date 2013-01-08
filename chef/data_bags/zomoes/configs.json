@@ -2,6 +2,7 @@
     "id"   : "configs",
     "gems" : [
         "rdoc",
-        "sinatra"
+        "sinatra",
+        "mongo_mapper"
     ]
 }

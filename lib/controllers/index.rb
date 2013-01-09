@@ -1,3 +1,8 @@
+require "peers/resume"
+
 get "/" do
-    erb :index
+	resumes = ResumePeer.instance.getAllResumes()
+	erb :index, :locals => {
+		:resumes  => resumes
+	}
 end

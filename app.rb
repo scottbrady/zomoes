@@ -15,5 +15,5 @@ set :views, settings.root + '/lib/views'
 
 # recursively find and require all controllers
 Find.find("./lib/controllers") do |file|
-    require file if file.end_with?(".rb")
+	require file if file.end_with?(".rb")
 end

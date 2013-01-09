@@ -1,1 +1,11 @@
-this is the index
+<p>Available resumes:</p>
+
+<ul>
+	<% resumes.each do |resume| %>
+		<li>
+			<a href="/resume/<%= resume.id %>">
+				<%= resume.first_name %> <%= resume.last_name %>
+			</a>
+		</li>
+	<% end %>
+</ul>

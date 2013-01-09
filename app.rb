@@ -1,10 +1,11 @@
 require "find"
 require "rubygems"
 require "bundler/setup"
-
 require "json"
 require "mongo_mapper"
 require "sinatra"
+
+include ERB::Util
 
 $: << "./lib"
 

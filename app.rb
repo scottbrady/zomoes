@@ -11,6 +11,7 @@ $: << "./lib"
 MongoMapper.database = "zomoes"
 
 set :port, 8080
+set :views, settings.root + '/lib/views'
 
 # recursively find and require all controllers
 Find.find("./lib/controllers") do |file|

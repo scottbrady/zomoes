@@ -45,11 +45,15 @@ function(
 
 			this._resume.fetch({
 				success : function(model, response) {
-					EventDispatcher.trigger('resume:load:done', self._resume);
+					if (response) {
+						EventDispatcher.trigger('resume:load:done', self._resume);
+					} else {
+						EventDispatcher.trigger('resume:load:error');
+					}
 				},
 
 				error : function(model, response) {
-					throw 'Error loading the resume.'
+					EventDispatcher.trigger('resume:load:error');
 				}
 			});
 		}

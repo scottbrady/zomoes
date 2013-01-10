@@ -11,18 +11,27 @@ function(
 	ResumeTemplate,
 	EventDispatcher
 ) {
+	/**
+	 * Object that handles the resume view.
+	 **/
 	var ResumeView = Backbone.View.extend({
 
 		//////////////////////////////////////////////////////////////////////
 		// Public methods ///////////////////////////////////////////////////
 		////////////////////////////////////////////////////////////////////
 
+		/**
+		 * Initialization method.
+		 **/
 		initialize : function(options) {
 			this._resumeTemplate = _.template(ResumeTemplate);
 			this._resume         = options.resume;
 			this._registerEvents();
 		},
 
+		/**
+		 * Render the resume.
+		 **/
 		render : function(resume) {
 			var self = this,
 				html = this._resumeTemplate(resume.toJSON());
@@ -32,6 +41,9 @@ function(
 			$(this.el).click(_.bind(this._notARickRoll, this));
 		},
 
+		/**
+		 * Render an error.
+		 **/
 		renderError : function() {
 			$(this.el).html(
 				'Oops, there was a problem loading the resume.'
@@ -42,6 +54,9 @@ function(
 		// Psuedo-private methods ///////////////////////////////////////////
 		////////////////////////////////////////////////////////////////////
 
+		/**
+		 * Register events.
+		 **/
 		_registerEvents : function() {
 			EventDispatcher.on(
 				'resume:load:done',
@@ -54,6 +69,9 @@ function(
 			);
 		},
 
+		/**
+		 * This is not the method you are looking for.
+		 **/
 		_notARickRoll : function() {
 			window.location = 'http://youtu.be/dQw4w9WgXcQ?t=43s';
 		}

@@ -14,6 +14,9 @@ function(
 	ResumeModel
 ) {
 
+	/**
+	 * Object to bootstrap the resume page.
+	 **/
 	function Resume() {};
 
 	_.extend(Resume.prototype, {
@@ -22,6 +25,9 @@ function(
 		// Public methods ///////////////////////////////////////////////////
 		////////////////////////////////////////////////////////////////////
 
+		/**
+		 * Initialization method.
+		 **/
 		initialize : function() {
 			var editorView  = new ResumeView({
 					el : $('#resume')
@@ -34,16 +40,24 @@ function(
 		// Psuedo-private methods ///////////////////////////////////////////
 		////////////////////////////////////////////////////////////////////
 
+		/**
+		 * Load a specific resume.
+		 **/
 		_loadResume : function() {
 
 			var self     = this,
-				resumeId = $('#resumeId').text();
+				resumeId = $('#resumeId').text(); // get the resume ID
 
+			// get a new resume object
 			this._resume   = new ResumeModel({
 				id : resumeId
 			});
 
+			// load the resume data
 			this._resume.fetch({
+				/**
+				 * Run when the resume was loaded successfully.
+				 **/
 				success : function(model, response) {
 					if (response) {
 						EventDispatcher.trigger('resume:load:done', self._resume);
@@ -52,6 +66,9 @@ function(
 					}
 				},
 
+				/**
+				 * Run when there's an error loading the resume.
+				 **/
 				error : function(model, response) {
 					EventDispatcher.trigger('resume:load:error');
 				}

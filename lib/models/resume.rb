@@ -1,3 +1,4 @@
+# Object for representing a single resume.
 class Resume
 	include MongoMapper::Document
 

@@ -1,16 +1,19 @@
 define(
 [
-    'underscore',
-    'backbone'
+	'underscore',
+	'backbone'
 ],
 function(
-    _,
-    Backbone
+	_,
+	Backbone
 ) {
 
-    var EventDispatcher = {};
+	/**
+	 * Object to route events through the frontend application.
+	 **/
+	var EventDispatcher = {};
 
-    _.extend(EventDispatcher, Backbone.Events);
+	_.extend(EventDispatcher, Backbone.Events);
 
-    return EventDispatcher;
+	return EventDispatcher;
 });

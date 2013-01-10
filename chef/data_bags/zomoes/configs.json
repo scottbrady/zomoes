@@ -1,6 +1,7 @@
 {
     "id"   : "configs",
     "gems" : [
-        "bundler"
+        "bundler",
+        "thin"
     ]
 }

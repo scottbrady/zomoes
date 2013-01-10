@@ -5,5 +5,6 @@ run_list(
     "recipe[mongodb::10gen_repo]",
     "recipe[mongodb::default]",
     "recipe[zomoes::gems]",
-    "recipe[zomoes::post]"
+    "recipe[zomoes::post]",
+    "recipe[zomoes::server]"
 )

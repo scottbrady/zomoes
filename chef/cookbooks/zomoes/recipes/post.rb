@@ -9,3 +9,7 @@ bash "install_gems_bundle" do
         bundle install
     EOH
 end
+
+execute "import mongo data" do
+    command "mongo zomoes /var/www/chef/cookbooks/zomoes/files/default/mongo-import.js"
+end
